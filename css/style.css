@@ -12,6 +12,7 @@
 	--footer-text-color: rgba(255, 255, 255, 0.6);
 	--card-set-gap: 30px;
 	--items: 3;
+	--indent: 30px;
 }
 
 body {
@@ -55,19 +56,13 @@ img {
 	padding-bottom: 94px;
 }
 .card-set {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: calc(-1 * var(--card-set-gap));
-	margin-top: calc(-1 * var(--card-set-gap));
+	gap: var(--indent);
 }
+
 .card-set-item {
-	flex-basis: calc(100% / var(--items) - var(--card-set-gap));
-	margin-left: var(--card-set-gap);
-	margin-top: var(--card-set-gap);
+	flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / (var(--items)));
 }
 /*--------------------HEADER--------------------------*/
 
@@ -323,7 +318,7 @@ img {
 	height: 44px;
 	border-radius: 50%;
 	background-color: #ffffff;
-	color: var(--description-text-color);
+	color: #afb1b8;
 }
 .socials-link:hover,
 .socials-link:focus {
@@ -334,12 +329,6 @@ img {
 	fill: currentColor;
 }
 /*--------------------Постійні клієнти--------------------------*/
-.customers-item {
-	border: 1px solid #afb1b8;
-	border-radius: 4px;
-	width: 170px;
-	height: 92px;
-}
 
 .customers-list {
 	--items: 6;
@@ -350,6 +339,9 @@ img {
 	align-items: center;
 	color: #afb1b8;
 	border: 1px solid #afb1b8;
+	border-radius: 4px;
+	width: 170px;
+	height: 92px;
 }
 .customers-ikon {
 	fill: currentColor;
@@ -435,6 +427,7 @@ footer {
 	text-align: center;
 	border-radius: 4px;
 	border: 1px solid transparent;
+	cursor: pointer;
 }
 .filter-item:hover,
 .filter-item:focus {
